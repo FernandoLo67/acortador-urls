@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acortador de URLs</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <h1>Acortador de URLs</h1>
+            <p>Pega una URL larga y obtene una corta al instante</p>
+        </header>
+
+        <form id="formulario">
+            <div class="campo">
+                <input
+                    type="text"
+                    id="url-input"
+                    placeholder="https://ejemplo.com/una/url/muy/larga"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="btn-acortar">Acortar</button>
+            </div>
+            <p id="error" class="error" hidden></p>
+        </form>
+
+        <div id="resultado" class="resultado" hidden>
+            <p>URL acortada:</p>
+            <div class="url-corta">
+                <a id="url-corta" href="#" target="_blank"></a>
+                <button id="btn-copiar" type="button">Copiar</button>
+            </div>
+        </div>
+
+        <section id="seccion-lista">
+            <h2>URLs creadas <span id="total">(0)</span></h2>
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>URL original</th>
+                        <th>Clicks</th>
+                        <th>Creada</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla"></tbody>
+            </table>
+            <p id="vacio" class="vacio">No hay URLs todavia. Acorta una arriba.</p>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

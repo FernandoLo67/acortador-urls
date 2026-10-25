@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+header p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.campo {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#url-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+#url-input:focus {
+    outline: none;
+    border-color: #4361ee;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+#btn-acortar {
+    background: #4361ee;
+    color: white;
+}
+
+#btn-acortar:hover {
+    background: #3a56d4;
+}
+
+.error {
+    color: #e63946;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.resultado {
+    background: #e8f5e9;
+    border: 2px solid #66bb6a;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.resultado p {
+    font-size: 0.85rem;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+}
+
+.url-corta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.url-corta a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1b5e20;
+    word-break: break-all;
+}
+
+#btn-copiar {
+    background: #66bb6a;
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    white-space: nowrap;
+}
+
+#btn-copiar:hover {
+    background: #57a05a;
+}
+
+#seccion-lista {
+    margin-top: 2.5rem;
+}
+
+#seccion-lista h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#seccion-lista h2 span {
+    color: #888;
+    font-weight: 400;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+thead th {
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 2px solid #ddd;
+    color: #555;
+    font-weight: 600;
+}
+
+tbody td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background: #f0f4ff;
+}
+
+.url-original {
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.url-original a {
+    color: #4361ee;
+    text-decoration: none;
+}
+
+.url-original a:hover {
+    text-decoration: underline;
+}
+
+.btn-borrar {
+    background: none;
+    color: #999;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+}
+
+.btn-borrar:hover {
+    color: #e63946;
+    background: #ffeef0;
+}
+
+.vacio {
+    text-align: center;
+    color: #999;
+    padding: 2rem;
+}
+
+@media (max-width: 600px) {
+    .campo {
+        flex-direction: column;
+    }
+
+    #btn-acortar {
+        width: 100%;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody tr {
+        padding: 0.75rem;
+        margin-bottom: 0.5rem;
+        background: white;
+        border-radius: 8px;
+        border: 1px solid #eee;
+    }
+
+    tbody td {
+        padding: 0.25rem 0;
+        border: none;
+    }
+
+    tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #555;
+        margin-right: 0.5rem;
+    }
+
+    .url-original {
+        max-width: 100%;
+    }
+}

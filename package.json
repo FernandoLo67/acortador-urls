@@ -1,0 +1,19 @@
+{
+  "name": "acortador-urls",
+  "version": "1.0.0",
+  "description": "Acortador de URLs con Node.js y Express",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "jest --verbose"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "nanoid": "^3.3.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}
